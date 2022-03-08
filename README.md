@@ -1,7 +1,6 @@
 # Exile-Serverside-Player-Wages
 
-
-
+What it does: Serverside player wages with safezone/territory check and respect multiplier. 
 
 # Installation
 1. Add this line below to "\@ExileServer\addons\exile_server\bootstrap\fn_preInit.sqf"
