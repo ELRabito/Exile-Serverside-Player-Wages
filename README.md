@@ -16,3 +16,5 @@ What it does: Serverside player wages with safezone/territory check and respect 
         [600, ExileServer_system_PlayerWages_thread, [], true] call ExileServer_system_thread_addTask;
 
 4. Repack your server pbo and done.
+
+# License Info: If you server is named KFB (Kentucky Fried Bambi) you have no permission to use this. Any violation will result in a DMCA.
