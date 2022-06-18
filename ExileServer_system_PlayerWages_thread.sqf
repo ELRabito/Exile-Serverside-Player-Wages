@@ -5,7 +5,6 @@
 *
 */
 {
-
 	private _player = _x;
 	if (alive _player) then
 	{
@@ -28,19 +27,15 @@
 				};
 				
 				private _increase = round (_playerScore * 0.001); // INCREASE DEPENDING ON THE RESPECT AMOUNT
-				if (_increase < 1) then 
-				{
-					_increase = 0;
-				};
+				if (_increase < 1) then {_increase = 0};
 				private _amount = 250 + _increase;
 				private _newPlayerMoney = _playerMoney + _amount;
 				_player setVariable ["ExileMoney", _newPlayerMoney,true];
-
 				[_player, "toastRequest", ["InfoTitleAndText", ["Activity reward",format ["You received +%1 <img image='\exile_assets\texture\ui\poptab_inline_ca.paa' size='24'/><br/>You have now %2 <img image='\exile_assets\texture\ui\poptab_inline_ca.paa' size='24'/>", _amount, _newPlayerMoney]]]] call ExileServer_system_network_send_to;
 				{playSound "readoutClick"} remoteExec ["call",_player];
 				format["setPlayerMoney:%1:%2", _newPlayerMoney, _player getVariable ["ExileDatabaseID", 0]] call ExileServer_system_database_query_fireAndForget;
 			};
 		};
 	};
-
+	
 } forEach entities [["Exile_Unit_Player"], [], true, true];
