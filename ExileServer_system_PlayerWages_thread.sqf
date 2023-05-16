@@ -8,7 +8,7 @@
 	private _player = _x;
 	if (alive _player) then
 	{
-		if ((_player call ExileClient_util_world_isInTraderZone) || (_player call ExileClient_util_world_isInTerritory)) then
+		if ((_player call ExileClient_util_world_isInTraderZone) or {(_player call ExileClient_util_world_isInTerritory)}) then
 		{	
 			[_player, "toastRequest", ["ErrorTitleAndText", ["Activity reward",format ["You do not earn Activity rewards in Safezones or Territories!"]]]] call ExileServer_system_network_send_to;
 			{playSound "addItemFailed"} remoteExec ["call",_player];
